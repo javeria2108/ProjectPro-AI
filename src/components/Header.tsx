@@ -9,7 +9,7 @@ type Props = {}
 const Header = (props: Props) => {
   return (
     <header className='sticky top-0 backdrop-blur-sm z-20'>
-        <div className='flex justify-between items-center py-3 bg-[#0E0137] text-white text-sm'>
+        <div className='flex justify-between items-center py-3 bg-transparent text-white text-sm'>
             <div className='px-5'>
                 <Image src={Logo} alt="Starship Logo" height={40} width={40} />
             </div>

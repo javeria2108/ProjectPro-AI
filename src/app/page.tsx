@@ -1,9 +1,10 @@
-// import Header from "@/components/Header";
+import Header from "@/components/Header";
 import { Hero } from "@/sections/Hero";
-import {Header} from "@/sections/Header";
+import Background from "@/assets/background.jpg";
+//import {Header} from "@/sections/Header";
 export default function Home() {
   return (
-    <div>
+    <div className="bg-cover bg-fit bg-no-repeat " style={{backgroundImage: `url(${Background.src})`}}>
       <Header/>
       <Hero/>
     </div>
