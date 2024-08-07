@@ -10,7 +10,7 @@ body{
         @apply px-4 py-2 rounded-lg font-medium inline-flex items-center justify-center tracking-tight;
     }
     .btn-primary{
-        @apply bg-[#0E0137] text-white;
+        @apply bg-[#37078C] text-white;
     }
     .btn-text{
         @apply text-black bg-transparent;
