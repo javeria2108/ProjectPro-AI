@@ -21,14 +21,14 @@ export const Hero = () => {
     });
   });
   return (
-    <section className='pt-8 pb-20 md:pt-5 md:pb-10  overflow-x-clip bg-black' >
+    <section className='pt-8 pb-20 md:pt-5 md:pb-10  overflow-x-clip '>
       <div className="container">
         <div className='md:flex'>
         <div className='md:w-[478px]'>
           {/* <div className="text-sm text-[#F963F6] inline-flex border border-white/10 px-3 py-1 rounded-lg tracking-tighter">
           Your FYP Command Center
           </div> */}
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-b from-[#390e3f] to-[#3605a1] text-transparent bg-clip-text mt-6">Starship Scholar</h1>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-b from-[#c83ddb] to-[#4009c2] text-transparent bg-clip-text mt-6">ProjectPro AI</h1>
           <h2 className="text-2xl md:text-3xl font-bold tracking-tighter bg-[#B8D8FF] text-transparent bg-clip-text mt-6">Innovate, Research, Achieve: Your Final Year Project Companion</h2>
           <p className="text-xl text-[#B8D8FF] tracking-tight mt-6">
           Discover, organize, and conquer your final year project with AI-powered tools and resources.
@@ -45,13 +45,13 @@ export const Hero = () => {
         </div>
         <div className='mt-10 md:mt-0 md:h-[648px] md:flex-1 relative'>
   <div className="relative w-full h-full">
-      <Image 
+      {/* <Image 
         src={GalaxyImage} 
         alt="Starship Logo" 
         layout="fill"
         objectFit="contain"
         className='galaxy-spin z-20 absolute top-[-50px] md:object-none md:object-left-top'
-      />
+      /> */}
   </div>
 </div>
         </div>
