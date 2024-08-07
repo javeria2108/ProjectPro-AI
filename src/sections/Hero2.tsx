@@ -3,7 +3,7 @@ import cogImage from "@/assets/nebula2.png";
 import Image from "next/image";
 import cylinderImage from "@/assets/ss2.png";
 import noodleImage from "@/assets/ff2.png";
-import backgroundImage from '@/assets/bg.jpg'
+import backgroundImage from "@/assets/bg.jpg";
 
 export const Hero = () => {
   return (
@@ -14,11 +14,9 @@ export const Hero = () => {
       <div className="container">
         <div className="md:flex items-center">
           <div className="md:w-[478px]">
-            <div className="text-sm inline-flex border border-[#222]/10 px-3 py-1 rounded-lg tracking-tight">
-              Version 1.0 coming soon
-            </div>
+            <div className="tag">Version 1.0 coming soon</div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6">
-              Starship Scholar
+              ProjectPro AI
             </h1>
             <p className="text-xl text-[#010D3E] tracking-tight mt-6">
               Discover, organize, and conquer your final year project with
