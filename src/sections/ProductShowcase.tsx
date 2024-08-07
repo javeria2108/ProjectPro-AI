@@ -11,12 +11,10 @@ export const ProductShowcase = () => {
           <div className="flex justify-center">
             <div className="tag">Innovate, research, and achieve</div>
           </div>
-          <h2 className="text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-5">
+          <h2 className="section-title mt-5">
             Your Final Year Project Companion
           </h2>
-          <p className="text-center text-[22px] leading-[30px] tracking-tight text-[#010D3E] mt-5">
-            etc etc sum text
-          </p>
+          <p className="section-description mt-5">etc etc sum text</p>
         </div>
         <div className="relative">
           <Image src={productImage} alt="Product Image" className="mt-10" />
@@ -32,7 +30,7 @@ export const ProductShowcase = () => {
             alt="tube image"
             height={248}
             className="hidden md:block absolute bottom-20 -left-36"
-          ></Image>
+          />
         </div>
       </div>
     </section>
