@@ -5,6 +5,7 @@ import pyramidImage from "@/assets/lg.png";
 import tubeImage from "@/assets/planet.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 export const ProductShowcase = () => {
   const sectionRef = useRef(null);
@@ -20,16 +21,20 @@ export const ProductShowcase = () => {
     >
       <div className="container">
         <div className="section-heading">
-          <div className="flex justify-center">
-            <div className="tag">Innovate, research, and achieve</div>
-          </div>
-          <h2 className="section-title mt-5">
-            Your Final Year Project Companion
-          </h2>
-          <p className="section-description mt-5">etc etc sum text</p>
+          <RevealOnScroll>
+            <div className="flex justify-center">
+              <div className="tag">Innovate, research, and achieve</div>
+            </div>
+            <h2 className="section-title mt-5">
+              Your Final Year Project Companion
+            </h2>
+            <p className="section-description mt-5">etc etc sum text</p>
+          </RevealOnScroll>
         </div>
         <div className="relative">
-          <Image src={productImage} alt="Product Image" className="mt-10" />
+          <RevealOnScroll>
+            <Image src={productImage} alt="Product Image" className="mt-10" />
+          </RevealOnScroll>
           <motion.img
             src={pyramidImage.src}
             height={262}
