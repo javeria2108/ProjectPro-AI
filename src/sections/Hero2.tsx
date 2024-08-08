@@ -1,18 +1,14 @@
+// src/sections/Hero2.tsx
 "use client";
 import ArrowIcon from "@/assets/arrow-right.svg";
 import cogImage from "@/assets/nebula2.png";
 import Image from "next/image";
 import cylinderImage from "@/assets/ss2.png";
 import noodleImage from "@/assets/ff2.png";
-import backgroundImage from "@/assets/bg.jpg";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useMotionValueEvent,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 
 export const Hero = () => {
   const heroRef = useRef(null);
@@ -21,11 +17,11 @@ export const Hero = () => {
     offset: ["start end", "end start"],
   });
   const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+
   return (
     <section
       ref={heroRef}
       className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_100%)] overflow-x-clip"
-      // style={{ backgroundImage: `url(${backgroundImage.src})` }}
     >
       <div className="container">
         <div className="md:flex items-center">
@@ -42,7 +38,14 @@ export const Hero = () => {
             </RevealOnScroll>
             <RevealOnScroll>
               <div className="flex gap-1 items-center mt-[30px]">
-                <button className="btn btn-primary">Get waitlisted</button>
+                <SignedIn>
+                  <button className="btn btn-primary">You're waitlisted!</button>
+                </SignedIn>
+                <SignedOut>
+                  <SignInButton mode="modal">
+                    <button className="btn btn-primary">Get waitlisted</button>
+                  </SignInButton>
+                </SignedOut>
                 <button className="btn btn-text gap-1">
                   <span>Learn more</span>
                   <ArrowIcon className="h-5 w-5" />

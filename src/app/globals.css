@@ -45,7 +45,6 @@ body {
   }
 }
 
-/* src/app/globals.css or a specific CSS file */
 .glass-effect {
   backdrop-filter: blur(10px);
 }
