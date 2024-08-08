@@ -44,3 +44,19 @@ body {
     @apply max-w-[540px] mx-auto;
   }
 }
+
+/* src/app/globals.css or a specific CSS file */
+.glass-effect {
+  backdrop-filter: blur(10px);
+}
+
+.glass-placeholder {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}

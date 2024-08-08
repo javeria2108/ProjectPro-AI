@@ -11,7 +11,7 @@ import { useInView } from "react-intersection-observer";
 
 const slideAndTiltVariants = {
   hidden: {
-    opacity: 0.5,
+    opacity: 0,
     rotateY: -45,
     y: 100,
   },
@@ -57,36 +57,44 @@ export const ProductShowcase = () => {
           </RevealOnScroll>
         </div>
         <div className="relative" style={{ perspective: 1000 }}>
-          <motion.div
+          <div
             ref={inViewRef}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            variants={slideAndTiltVariants}
             className="mt-10"
-            style={{ transformOrigin: "center", opacity: 0.5 }} // Ensure initial visibility
+            style={{
+              transformOrigin: "center",
+              transition: "opacity 1s ease-in-out, transform 1s ease-in-out",
+              opacity: inView ? 1 : 0.2,
+              transform: inView ? "rotateY(0) translateY(0)" : "rotateY(-45deg) translateY(100px)",
+            }}
           >
-            <Image src={productImage} alt="Product Image" />
-          </motion.div>
-            <motion.img
-              src={pyramidImage.src}
-              height={262}
-              width={262}
-              alt="pyramid image"
-              className="hidden md:block absolute -right-36 -top-32 rotate-[10deg]"
-              style={{
-                translateY,
-              }}
+            <Image
+              src={productImage}
+              alt="Product Image"
+              className="glass-effect"
+              style={{ opacity: inView ? 1 : 0 }}
             />
-            <motion.img
-              src={tubeImage.src}
-              alt="tube image"
-              height={248}
-              width={248}
-              className="hidden md:block absolute bottom-20 -left-36"
-              style={{
-                translateY,
-              }}
-            />
+            <div className="glass-placeholder" style={{ display: inView ? "none" : "block" }} />
+          </div>
+          <motion.img
+            src={pyramidImage.src}
+            height={262}
+            width={262}
+            alt="pyramid image"
+            className="hidden md:block absolute -right-36 -top-32 rotate-[10deg]"
+            style={{
+              translateY,
+            }}
+          />
+          <motion.img
+            src={tubeImage.src}
+            alt="tube image"
+            height={248}
+            width={248}
+            className="hidden md:block absolute bottom-20 -left-36"
+            style={{
+              translateY,
+            }}
+          />
         </div>
       </div>
     </section>
