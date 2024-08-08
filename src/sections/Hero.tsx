@@ -28,7 +28,7 @@ export const Hero = () => {
           {/* <div className="text-sm text-[#F963F6] inline-flex border border-white/10 px-3 py-1 rounded-lg tracking-tighter">
           Your FYP Command Center
           </div> */}
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-b from-[#c83ddb] to-[#4009c2] text-transparent bg-clip-text mt-6">ProjectPro AI</h1>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-b from-[#7a1e86] to-[#250474] text-transparent bg-clip-text mt-6">Starship Scholar</h1>
           <h2 className="text-2xl md:text-3xl font-bold tracking-tighter bg-[#B8D8FF] text-transparent bg-clip-text mt-6">Innovate, Research, Achieve: Your Final Year Project Companion</h2>
           <p className="text-xl text-[#B8D8FF] tracking-tight mt-6">
           Discover, organize, and conquer your final year project with AI-powered tools and resources.

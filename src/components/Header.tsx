@@ -13,7 +13,7 @@ const Header = (props: Props) => {
             <div className='px-5'>
                 <Image src={Logo} alt="Starship Logo" height={40} width={40} />
             </div>
-            <div className='flex items-center'>
+            <div className='flex items-center bg-black'>
                 <span className='whitespace-nowrap'>Join our waitlist</span>
                 <ArrowRight className='h-4 w-4 ml-1'/>
             </div>
