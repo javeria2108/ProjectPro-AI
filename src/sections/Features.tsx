@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect } from "react";
 import cylinderImage from "@/assets/cylinder.png";
 import starImage from "@/assets/star.png";
-import pyramidImage from "@/assets/pyramid.png";
+import pyramidImage from "@/assets/tube.png";
 import springImage from "@/assets/spring.png";
 
 export const Features = () => {
@@ -12,7 +12,7 @@ export const Features = () => {
     target: sectionRef,
     offset: ["start end", "end start"],
   });
-  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1.3]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
 
   useEffect(() => {
     scrollYProgress.onChange((v) => console.log("ScrollYProgress:", v));
@@ -39,7 +39,7 @@ export const Features = () => {
             <motion.img
               src={cylinderImage.src}
               alt="Integration Ecosystem"
-              className="mx-auto mb-4 w-56 h-56 object-cover rounded-xl"
+              className="mx-auto mb-4 w-48 h-48 object-cover rounded-xl"
               style={{ scale }}
             />
             <h3 className="text-xl font-bold mb-2">Integration Ecosystem</h3>
@@ -52,7 +52,7 @@ export const Features = () => {
             <motion.img
               src={starImage.src}
               alt="Goal setting and tracking"
-              className="mx-auto mb-4 w-56 h-56 object-cover rounded-xl"
+              className="mx-auto mb-4 w-48 h-48 object-cover rounded-xl"
               style={{ scale }}
             />
             <h3 className="text-xl font-bold mb-2">
@@ -69,7 +69,7 @@ export const Features = () => {
             <motion.img
               src={pyramidImage.src}
               alt="Integration Ecosystem"
-              className="mx-auto mb-4 w-56 h-56 object-cover rounded-xl"
+              className="mx-auto mb-4 w-48 h-48 object-cover rounded-xl"
               style={{ scale }}
             />
             <h3 className="text-xl font-bold mb-2">Integration Ecosystem</h3>
@@ -82,7 +82,7 @@ export const Features = () => {
             <motion.img
               src={springImage.src}
               alt="Goal setting and tracking"
-              className="mx-auto mb-4 w-56 h-56 object-cover rounded-xl"
+              className="mx-auto mb-4 w-48 h-48 object-cover rounded-xl"
               style={{ scale }}
             />
             <h3 className="text-xl font-bold mb-2">
