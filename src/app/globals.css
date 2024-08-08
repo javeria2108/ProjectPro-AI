@@ -35,9 +35,27 @@ body {
     @apply text-sm inline-flex border border-[#222]/10 px-3 py-1 rounded-lg tracking-tight;
   }
   .section-title {
-    @apply text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text
+    @apply text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text;
   }
   .section-description {
-    @apply text-center text-[22px] leading-[30px] tracking-tight text-[#010D3E]
+    @apply text-center text-[22px] leading-[30px] tracking-tight text-[#010D3E];
   }
+  .section-heading {
+    @apply max-w-[540px] mx-auto;
+  }
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+}
+
+.glass-placeholder {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
