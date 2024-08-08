@@ -1,12 +1,18 @@
-//import Header from "@/components/Header";
-import { Hero } from "@/sections/Hero";
-import Background from "@/assets/background.jpg";
-import {Header} from "@/sections/Header";
+// import Header from "@/components/Header";
+// import { Hero } from "@/sections/Hero";
+import { Hero } from "@/sections/Hero2";
+import { Header } from "@/sections/Header";
+import { LogoTicker } from "@/sections/LogoTicker";
+import { ProductShowcase } from "@/sections/ProductShowcase";
+import { Features } from "@/sections/Features";
 export default function Home() {
   return (
-    <div className="bg-cover bg-fit bg-no-repeat " style={{backgroundImage: `url(${Background.src})`}}>
+    <div>
       <Header/>
       <Hero/>
+      <LogoTicker/>
+      <ProductShowcase/>
+      <Features/>
     </div>
   );
 }
