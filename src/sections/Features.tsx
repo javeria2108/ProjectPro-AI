@@ -1,13 +1,25 @@
-import trial from "@/assets/planet.png";
-import Image from "next/image";
+"use client";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useEffect } from "react";
 import cylinderImage from "@/assets/cylinder.png";
 import starImage from "@/assets/star.png";
 import pyramidImage from "@/assets/pyramid.png";
 import springImage from "@/assets/spring.png";
 
 export const Features = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1.3]);
+
+  useEffect(() => {
+    scrollYProgress.onChange((v) => console.log("ScrollYProgress:", v));
+  }, [scrollYProgress]);
+
   return (
-    <section className="bg-white py-24 overflow-x-clip">
+    <section ref={sectionRef} className="bg-white py-24 overflow-x-clip">
       <div className="container mx-auto px-4">
         <div className="section-heading text-center">
           <div className="flex justify-center">
@@ -24,10 +36,11 @@ export const Features = () => {
         </div>
         <div className="flex flex-col gap-12 items-center mt-10 lg:flex-row lg:items-stretch lg:justify-center">
           <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#EAEAEA] text-center">
-            <Image
-              src={cylinderImage}
+            <motion.img
+              src={cylinderImage.src}
               alt="Integration Ecosystem"
               className="mx-auto mb-4 w-56 h-56 object-cover rounded-xl"
+              style={{ scale }}
             />
             <h3 className="text-xl font-bold mb-2">Integration Ecosystem</h3>
             <p className="text-sm tracking-tight text-[#010D3E]">
@@ -36,10 +49,11 @@ export const Features = () => {
             </p>
           </div>
           <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#EAEAEA] text-center">
-            <Image
-              src={starImage}
+            <motion.img
+              src={starImage.src}
               alt="Goal setting and tracking"
               className="mx-auto mb-4 w-56 h-56 object-cover rounded-xl"
+              style={{ scale }}
             />
             <h3 className="text-xl font-bold mb-2">
               Goal setting and tracking
@@ -52,10 +66,11 @@ export const Features = () => {
         </div>
         <div className="flex flex-col gap-12 items-center mt-12 lg:flex-row lg:items-stretch lg:justify-center">
           <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#EAEAEA] text-center">
-            <Image
-              src={pyramidImage}
+            <motion.img
+              src={pyramidImage.src}
               alt="Integration Ecosystem"
               className="mx-auto mb-4 w-56 h-56 object-cover rounded-xl"
+              style={{ scale }}
             />
             <h3 className="text-xl font-bold mb-2">Integration Ecosystem</h3>
             <p className="text-sm tracking-tight text-[#010D3E]">
@@ -64,10 +79,11 @@ export const Features = () => {
             </p>
           </div>
           <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#EAEAEA] text-center">
-            <Image
-              src={springImage}
+            <motion.img
+              src={springImage.src}
               alt="Goal setting and tracking"
               className="mx-auto mb-4 w-56 h-56 object-cover rounded-xl"
+              style={{ scale }}
             />
             <h3 className="text-xl font-bold mb-2">
               Goal setting and tracking
