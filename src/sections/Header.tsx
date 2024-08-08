@@ -21,8 +21,8 @@ export const Header = () => {
             <MenuIcon className="h-5 w-5 md:hidden" />
             <nav className="hidden md:flex gap-6 text-black/60 items-center">
               <a href="#">About</a>
+              <a href="#">Product</a>
               <a href="#">Features</a>
-              <a href="#">Team</a>
               <button className="bg-black text-white px-4 py-2 rounded-lg font-medium inline-flex align-items justify-center tracking-tight">
                 Register now
               </button>
