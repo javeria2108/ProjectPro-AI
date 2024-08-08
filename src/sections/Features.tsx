@@ -1,15 +1,15 @@
 import trial from "@/assets/planet.png";
 import Image from "next/image";
 import cylinderImage from "@/assets/cylinder.png";
-import starImage from '@/assets/star.png'
-import pyramidImage from '@/assets/pyramid.png'
-import springImage from '@/assets/spring.png'
+import starImage from "@/assets/star.png";
+import pyramidImage from "@/assets/pyramid.png";
+import springImage from "@/assets/spring.png";
 
 export const Features = () => {
   return (
     <section className="bg-white py-24 overflow-x-clip">
       <div className="container mx-auto px-4">
-        <div className="max-w-[540px] mx-auto text-center">
+        <div className="section-heading text-center">
           <div className="flex justify-center">
             <div className="tag">Everything you need</div>
           </div>
