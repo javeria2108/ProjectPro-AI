@@ -20,7 +20,7 @@ export const Features = () => {
   }, [scrollYProgress]);
 
   return (
-    <section ref={sectionRef} className="bg-[#4C7CA3] py-24 overflow-x-clip">
+    <section ref={sectionRef} className="bg-white py-24 overflow-x-clip">
       <div className="container mx-auto px-4">
         <div className="section-heading text-center">
           <RevealOnScroll>
@@ -30,7 +30,7 @@ export const Features = () => {
             <h2 className="section-title mt-5">
               Streamlined for easy management
             </h2>
-            <p className="section-description mt-5">
+            <p className="section-description mt-5 text-[#0a1028]">
             Seamlessly organize, track, and complete your final year project
               with ease. Set goals, collaborate, and reach new heights in your
               academic journey.
@@ -39,7 +39,7 @@ export const Features = () => {
         </div>
         <RevealOnScroll>
           <div className="flex flex-col gap-12 items-center mt-10 lg:flex-row lg:items-stretch lg:justify-center">
-            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#190D54] text-center">
+            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#02103D] text-center">
               <motion.img
                 src={astronautImage.src}
                 alt="Integration Ecosystem"
@@ -51,7 +51,7 @@ export const Features = () => {
               Centralize your resources and tools for a streamlined workflow.
               </p>
             </div>
-            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#190D54] text-center">
+            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#02103D] text-center">
               <motion.img
                 src={GalaxyImage.src}
                 alt="Goal setting and tracking"
@@ -69,7 +69,7 @@ export const Features = () => {
         </RevealOnScroll>
         <RevealOnScroll>
           <div className="flex flex-col gap-12 items-center mt-12 lg:flex-row lg:items-stretch lg:justify-center">
-            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#190D54] text-center">
+            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#02103D] text-center">
               <motion.img
                 src={telescopeImage.src}
                 alt="Integration Ecosystem"
@@ -81,7 +81,7 @@ export const Features = () => {
               Discover and organize your research sources with precision
               </p>
             </div>
-            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#190D54] text-center">
+            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#02103D] text-center">
               <motion.img
                 src={rocketImage.src}
                 alt="Goal setting and tracking"

@@ -9,6 +9,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import planetImage1 from "@/assets/planet3.png";
+import planetImage2 from "@/assets/planet4.png";
 
 export const Hero = () => {
   const heroRef = useRef(null);
@@ -39,11 +41,13 @@ export const Hero = () => {
             <RevealOnScroll>
               <div className="flex gap-1 items-center mt-[30px]">
                 <SignedIn>
-                  <button className="btn btn-primary">You're waitlisted!</button>
+                  <button className="btn btn-primary">
+                    You're on the crew!
+                  </button>
                 </SignedIn>
                 <SignedOut>
                   <SignInButton mode="modal">
-                    <button className="btn btn-primary">Get waitlisted</button>
+                    <button className="btn btn-primary">Join the crew</button>
                   </SignInButton>
                 </SignedOut>
                 <button className="btn btn-text gap-1">
@@ -55,10 +59,29 @@ export const Hero = () => {
           </div>
           <div className="mt-20 md:mt-0 md:h-[648px] md:flex-1 relative">
             <RevealOnScroll>
+            <motion.div
+  className="hidden lg:block absolute top-[524px] left-[448px] cursor-grab"
+  style={{
+    rotate: 30,
+    translateY: translateY,
+  }}
+  drag
+  dragConstraints={{
+    top: -50,
+    left: -50,
+    right: 50,
+    bottom: 50,
+  }}
+  dragElastic={0.1}
+  whileDrag={{ scale: 1.1 }}
+>
+  <Image src={planetImage2.src} width={200} height={220} alt="planet image" />
+</motion.div>
+
               <motion.img
                 src={cogImage.src}
-                alt="cog image"
-                className="md:absolute md:h-full md:w-auto md:max-w-none md:-left-6 lg:left-0"
+                alt="planet image"
+                className="md:absolute md:h-full md:w-auto md:max-w-none md:right-0 md:bottom-0"
                 animate={{
                   translateY: [-30, 30],
                 }}
@@ -69,26 +92,26 @@ export const Hero = () => {
                   ease: "easeInOut",
                 }}
               />
-              <motion.img
-                src={cylinderImage.src}
-                width={220}
-                height={220}
-                alt="cylinder image"
-                className="hidden md:block -top-8 -left-32 md:absolute"
-                style={{
-                  translateY: translateY,
+              <motion.div
+                className="hidden md:block absolute -top-8 -left-32 cursor-grab"
+                style={{ translateY }}
+                drag
+                dragConstraints={{
+                  top: -50,
+                  left: -50,
+                  right: 50,
+                  bottom: 50,
                 }}
-              />
-              <motion.img
-                src={noodleImage.src}
-                width={200}
-                alt="noodle image"
-                className="hidden lg:block absolute top-[524px] left-[448px] rotate-[30deg]"
-                style={{
-                  rotate: 30,
-                  translateY: translateY,
-                }}
-              />
+                dragElastic={0.1}
+                whileDrag={{ scale: 1.1 }}
+              >
+                <Image
+                  src={planetImage1.src}
+                  width={220}
+                  height={220}
+                  alt="planet image"
+                />
+              </motion.div>
             </RevealOnScroll>
           </div>
         </div>
