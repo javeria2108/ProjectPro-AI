@@ -42,7 +42,7 @@ export const ProductShowcase = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-white to-[#171779] py-24 overflow-x-clip"
+      className="bg-black border-y border-gray-400 py-24 overflow-x-clip"
     >
       <div className="container">
         <div className="section-heading">
@@ -96,7 +96,9 @@ export const ProductShowcase = () => {
             }}
           />
         </div>
+        
       </div>
+
     </section>
   );
 };

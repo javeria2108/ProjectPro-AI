@@ -7,6 +7,7 @@ import telescopeImage from "@/assets/telescope.png";
 import rocketImage from "@/assets/rocket.png";
 import RevealOnScroll from "@/components/RevealOnScroll";
 
+
 export const Features = () => {
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -20,7 +21,7 @@ export const Features = () => {
   }, [scrollYProgress]);
 
   return (
-    <section ref={sectionRef} className="bg-white py-24 overflow-x-clip">
+    <section ref={sectionRef} className="bg-black py-24 overflow-x-clip border-b border-gray-500">
       <div className="container mx-auto px-4">
         <div className="section-heading text-center">
           <RevealOnScroll>
@@ -30,7 +31,7 @@ export const Features = () => {
             <h2 className="section-title mt-5">
               Streamlined for easy management
             </h2>
-            <p className="section-description mt-5 text-[#0a1028]">
+            <p className="section-description mt-5 text-white">
             Seamlessly organize, track, and complete your final year project
               with ease. Set goals, collaborate, and reach new heights in your
               academic journey.
@@ -39,7 +40,7 @@ export const Features = () => {
         </div>
         <RevealOnScroll>
           <div className="flex flex-col gap-12 items-center mt-10 lg:flex-row lg:items-stretch lg:justify-center">
-            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#02103D] text-center">
+            <div className="relative max-w-xs w-full bg-transparent text-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#252525] text-center">
               <motion.img
                 src={astronautImage.src}
                 alt="Integration Ecosystem"
@@ -47,11 +48,11 @@ export const Features = () => {
                 style={{ scale }}
               />
               <h3 className="text-xl font-bold mb-2">Mission Control</h3>
-              <p className="text-sm tracking-tight text-[#010D3E]">
+              <p className="text-sm tracking-tight text-white">
               Centralize your resources and tools for a streamlined workflow.
               </p>
             </div>
-            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#02103D] text-center">
+            <div className="relative max-w-xs w-full bg-transparent text-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#252525] text-center">
               <motion.img
                 src={GalaxyImage.src}
                 alt="Goal setting and tracking"
@@ -61,7 +62,7 @@ export const Features = () => {
               <h3 className="text-xl font-bold mb-2">
               Milestone Tracker
               </h3>
-              <p className="text-sm tracking-tight text-[#010D3E]">
+              <p className="text-sm tracking-tight text-white">
               Break down your project into manageable tasks and achieve them step by step.
               </p>
             </div>
@@ -69,7 +70,7 @@ export const Features = () => {
         </RevealOnScroll>
         <RevealOnScroll>
           <div className="flex flex-col gap-12 items-center mt-12 lg:flex-row lg:items-stretch lg:justify-center">
-            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#02103D] text-center">
+            <div className="relative max-w-xs w-full bg-transparent text-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#252525] text-center">
               <motion.img
                 src={telescopeImage.src}
                 alt="Integration Ecosystem"
@@ -77,11 +78,11 @@ export const Features = () => {
                 style={{ scale }}
               />
               <h3 className="text-xl font-bold mb-2">Research Navigator</h3>
-              <p className="text-sm tracking-tight text-[#010D3E]"> 
+              <p className="text-sm tracking-tight text-white"> 
               Discover and organize your research sources with precision
               </p>
             </div>
-            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#02103D] text-center">
+            <div className="relative max-w-xs w-full bg-transparent text-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#252525] text-center">
               <motion.img
                 src={rocketImage.src}
                 alt="Goal setting and tracking"
@@ -91,13 +92,15 @@ export const Features = () => {
               <h3 className="text-xl font-bold mb-2">
               Launch Pad
               </h3>
-              <p className="text-sm tracking-tight text-[#010D3E]">
+              <p className="text-sm tracking-tight text-white">
               Kickstart your project with the right resources and tools.
               </p>
             </div>
           </div>
         </RevealOnScroll>
       </div>
+
+      
     </section>
   );
 };

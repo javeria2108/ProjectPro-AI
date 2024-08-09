@@ -8,6 +8,7 @@ import { Features } from "@/sections/Features";
 import { Footer } from "@/sections/Footer";
 import { CallToAction } from "@/sections/CallToAction";
 import BackgroundImage from "@/assets/background.jpg"
+import Typewriter from "@/sections/Typewriter";
 export default function Home() {
   return (
     <div>
@@ -15,8 +16,9 @@ export default function Home() {
       <Header />
       <Hero />
       </div>
-      <LogoTicker />
+      <Typewriter/>
       <ProductShowcase />
+      <LogoTicker />
       <Features />
       <CallToAction />
       <Footer />

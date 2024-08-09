@@ -1,12 +1,8 @@
-// src/sections/Hero2.tsx
 "use client";
 import ArrowIcon from "@/assets/arrow-right.svg";
-import cogImage from "@/assets/nebula2.png";
 import Image from "next/image";
-import cylinderImage from "@/assets/ss2.png";
-import noodleImage from "@/assets/planet2.png";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import planetImage1 from "@/assets/planet3.png";
@@ -14,11 +10,28 @@ import planetImage2 from "@/assets/planet4.png";
 
 export const Hero = () => {
   const heroRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start end", "end start"],
-  });
-  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+  const planet1Ref = useRef(null);
+  const planet2Ref = useRef(null);
+
+  useEffect(() => {
+    const planet1 = planet1Ref.current;
+    const planet2 = planet2Ref.current;
+
+    // Function to create random floating animation
+    const floatAnimation = (element: any, xRange: number, yRange: number) => {
+      gsap.to(element, {
+        x: `+=${gsap.utils.random(-xRange, xRange)}`,
+        y: `+=${gsap.utils.random(-yRange, yRange)}`,
+        duration: gsap.utils.random(2, 4),
+        ease: "power1.inOut",
+        onComplete: () => floatAnimation(element, xRange, yRange), // Repeat animation
+      });
+    };
+
+    // Apply floating animation to both planets
+    floatAnimation(planet1, 50, 30);
+    floatAnimation(planet2, 60, 40);
+  }, []);
 
   return (
     <section
@@ -58,61 +71,22 @@ export const Hero = () => {
             </RevealOnScroll>
           </div>
           <div className="mt-20 md:mt-0 md:h-[648px] md:flex-1 relative">
-            <RevealOnScroll>
-            <motion.div
-  className="hidden lg:block absolute top-[524px] left-[448px] cursor-grab"
-  style={{
-    rotate: 30,
-    translateY: translateY,
-  }}
-  drag
-  dragConstraints={{
-    top: -50,
-    left: -50,
-    right: 50,
-    bottom: 50,
-  }}
-  dragElastic={0.1}
-  whileDrag={{ scale: 1.1 }}
->
-  <Image src={planetImage2.src} width={200} height={220} alt="planet image" />
-</motion.div>
-
-              <motion.img
-                src={cogImage.src}
+            <div ref={planet1Ref} className="absolute top-10 right-[30%]">
+              <Image
+                src={planetImage1.src}
+                width={220}
+                height={220}
                 alt="planet image"
-                className="md:absolute md:h-full md:w-auto md:max-w-none md:right-0 md:bottom-0"
-                animate={{
-                  translateY: [-30, 30],
-                }}
-                transition={{
-                  repeat: Infinity,
-                  repeatType: "mirror",
-                  duration: 3,
-                  ease: "easeInOut",
-                }}
               />
-              <motion.div
-                className="hidden md:block absolute -top-8 -left-32 cursor-grab"
-                style={{ translateY }}
-                drag
-                dragConstraints={{
-                  top: -50,
-                  left: -50,
-                  right: 50,
-                  bottom: 50,
-                }}
-                dragElastic={0.1}
-                whileDrag={{ scale: 1.1 }}
-              >
-                <Image
-                  src={planetImage1.src}
-                  width={220}
-                  height={220}
-                  alt="planet image"
-                />
-              </motion.div>
-            </RevealOnScroll>
+            </div>
+            <div ref={planet2Ref} className="absolute bottom-10 right-[20%]">
+              <Image
+                src={planetImage2.src}
+                width={200}
+                height={220}
+                alt="planet image"
+              />
+            </div>
           </div>
         </div>
       </div>
