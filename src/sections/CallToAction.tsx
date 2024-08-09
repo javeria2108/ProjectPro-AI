@@ -27,7 +27,7 @@ export const CallToAction = () => {
             <h2 className="section-title">Sign up for free today</h2>
             <p className="section-description mt-5">
             Gear up for a successful final year project with tools that
-              simplify your journey. From research to task management, we've got
+              simplify your journey. From research to task management, we have got
               you covered. Embark on this mission and make your project a
               stellar success.
             </p>
@@ -54,7 +54,7 @@ export const CallToAction = () => {
         <RevealOnScroll>
           <div className="flex gap-2 mt-10 justify-center">
             <SignedIn>
-              <button className="btn btn-primary">You're on the Crew!</button>
+              <button className="btn btn-primary">You&apos;re on the Crew!</button>
             </SignedIn>
             <SignedOut>
               <SignInButton mode="modal">

@@ -55,7 +55,7 @@ export const Hero = () => {
               <div className="flex gap-1 items-center mt-[30px]">
                 <SignedIn>
                   <button className="btn btn-primary">
-                    You're on the crew!
+                    You&apos;re on the crew!
                   </button>
                 </SignedIn>
                 <SignedOut>
