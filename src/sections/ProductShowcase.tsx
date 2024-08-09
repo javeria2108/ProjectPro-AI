@@ -42,7 +42,7 @@ export const ProductShowcase = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-[#283562] to-[#170D51] py-24 overflow-x-clip"
+      className="bg-black border-y border-gray-400 py-24 overflow-x-clip"
     >
       <div className="container">
         <div className="section-heading">
@@ -53,7 +53,7 @@ export const ProductShowcase = () => {
             <h2 className="section-title mt-5">
               Your Final Year Project Companion
             </h2>
-            <p className="section-description mt-5 text-[#4C7CA3]">Why spend hours sifting through countless articles when AI can do the heavy lifting for you? ProjectPro AI harnesses the power of AI to recommend the most relevant research, helping you stay ahead of the curve.</p>
+            <p className="section-description mt-5 ">Why spend hours sifting through countless articles when AI can do the heavy lifting for you? ProjectPro AI harnesses the power of AI to recommend the most relevant research, helping you stay ahead of the curve.</p>
           </RevealOnScroll>
         </div>
         <div className="relative" style={{ perspective: 1000 }}>
@@ -75,7 +75,7 @@ export const ProductShowcase = () => {
             />
             <div className="glass-placeholder" style={{ display: inView ? "none" : "block" }} />
           </div>
-          <motion.img
+          {/* <motion.img
             src={pyramidImage.src}
             height={262}
             width={262}
@@ -84,7 +84,7 @@ export const ProductShowcase = () => {
             style={{
               translateY,
             }}
-          />
+          /> */}
           <motion.img
             src={tubeImage.src}
             alt="tube image"
@@ -96,7 +96,9 @@ export const ProductShowcase = () => {
             }}
           />
         </div>
+        
       </div>
+
     </section>
   );
 };

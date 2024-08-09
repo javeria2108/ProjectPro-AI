@@ -8,8 +8,8 @@ import { dark } from "@clerk/themes";
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Light Saas Landing Page",
-  description: "Template created by Frontend Tribe",
+  title: "ProjectPro AI Landing Page",
+  description: "Landing page for headstarter fellowship final project, ProjectPro AI",
 };
 
 export default function RootLayout({
