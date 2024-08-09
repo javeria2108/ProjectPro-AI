@@ -1,10 +1,10 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect } from "react";
-import cylinderImage from "@/assets/cylinder.png";
-import starImage from "@/assets/star.png";
-import pyramidImage from "@/assets/tube.png";
-import springImage from "@/assets/spring.png";
+import astronautImage from "@/assets/astronaut.png";
+import GalaxyImage from "@/assets/cartoonGalaxy.png";
+import telescopeImage from "@/assets/telescope.png";
+import rocketImage from "@/assets/rocket.png";
 import RevealOnScroll from "@/components/RevealOnScroll";
 
 export const Features = () => {
@@ -20,83 +20,79 @@ export const Features = () => {
   }, [scrollYProgress]);
 
   return (
-    <section ref={sectionRef} className="bg-white py-24 overflow-x-clip">
+    <section ref={sectionRef} className="bg-[#4C7CA3] py-24 overflow-x-clip">
       <div className="container mx-auto px-4">
         <div className="section-heading text-center">
           <RevealOnScroll>
             <div className="flex justify-center">
-              <div className="tag">Everything you need</div>
+              <div className="tag">Your Project, Your Universe</div>
             </div>
             <h2 className="section-title mt-5">
               Streamlined for easy management
             </h2>
             <p className="section-description mt-5">
-              Enjoy customizable lists, team work tools, and smart tracking all
-              in one place. Set tasks, get reminders, and see your progress
-              simply and quickly.
+            Seamlessly organize, track, and complete your final year project
+              with ease. Set goals, collaborate, and reach new heights in your
+              academic journey.
             </p>
           </RevealOnScroll>
         </div>
         <RevealOnScroll>
           <div className="flex flex-col gap-12 items-center mt-10 lg:flex-row lg:items-stretch lg:justify-center">
-            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#EAEAEA] text-center">
+            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#190D54] text-center">
               <motion.img
-                src={cylinderImage.src}
+                src={astronautImage.src}
                 alt="Integration Ecosystem"
                 className="mx-auto mb-4 w-48 h-48 object-cover rounded-xl"
                 style={{ scale }}
               />
-              <h3 className="text-xl font-bold mb-2">Integration Ecosystem</h3>
+              <h3 className="text-xl font-bold mb-2">Mission Control</h3>
               <p className="text-sm tracking-tight text-[#010D3E]">
-                Enhance your productivity by connecting with your favorite
-                tools, keeping all your essentials in one place.
+              Centralize your resources and tools for a streamlined workflow.
               </p>
             </div>
-            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#EAEAEA] text-center">
+            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#190D54] text-center">
               <motion.img
-                src={starImage.src}
+                src={GalaxyImage.src}
                 alt="Goal setting and tracking"
                 className="mx-auto mb-4 w-48 h-48 object-cover rounded-xl"
                 style={{ scale }}
               />
               <h3 className="text-xl font-bold mb-2">
-                Goal setting and tracking
+              Milestone Tracker
               </h3>
               <p className="text-sm tracking-tight text-[#010D3E]">
-                Define and track your goals, breaking down objectives into
-                achievable tasks to keep your targets in sight.
+              Break down your project into manageable tasks and achieve them step by step.
               </p>
             </div>
           </div>
         </RevealOnScroll>
         <RevealOnScroll>
           <div className="flex flex-col gap-12 items-center mt-12 lg:flex-row lg:items-stretch lg:justify-center">
-            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#EAEAEA] text-center">
+            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#190D54] text-center">
               <motion.img
-                src={pyramidImage.src}
+                src={telescopeImage.src}
                 alt="Integration Ecosystem"
                 className="mx-auto mb-4 w-48 h-48 object-cover rounded-xl"
                 style={{ scale }}
               />
-              <h3 className="text-xl font-bold mb-2">Integration Ecosystem</h3>
-              <p className="text-sm tracking-tight text-[#010D3E]">
-                Enhance your productivity by connecting with your favorite
-                tools, keeping all your essentials in one place.
+              <h3 className="text-xl font-bold mb-2">Research Navigator</h3>
+              <p className="text-sm tracking-tight text-[#010D3E]"> 
+              Discover and organize your research sources with precision
               </p>
             </div>
-            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#EAEAEA] text-center">
+            <div className="relative max-w-xs w-full bg-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#190D54] text-center">
               <motion.img
-                src={springImage.src}
+                src={rocketImage.src}
                 alt="Goal setting and tracking"
                 className="mx-auto mb-4 w-48 h-48 object-cover rounded-xl"
                 style={{ scale }}
               />
               <h3 className="text-xl font-bold mb-2">
-                Goal setting and tracking
+              Launch Pad
               </h3>
               <p className="text-sm tracking-tight text-[#010D3E]">
-                Define and track your goals, breaking down objectives into
-                achievable tasks to keep your targets in sight.
+              Kickstart your project with the right resources and tools.
               </p>
             </div>
           </div>

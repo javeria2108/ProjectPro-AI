@@ -2,7 +2,7 @@
 "use client";
 import ArrowRight from "@/assets/arrow-right.svg";
 import starImage from "@/assets/pln2.png";
-import springImage from "@/assets/fly4.png";
+import planetImage from "@/assets/planet2.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import RevealOnScroll from "@/components/RevealOnScroll";
@@ -19,17 +19,17 @@ export const CallToAction = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gradient-to-b from-white to-[#D2DCFF] py-24 overflow-x-clip"
+      className="bg-gradient-to-b from-white to-[#25239e] py-24 overflow-x-clip"
     >
       <div className="container">
         <div className="section-heading relative">
           <RevealOnScroll>
             <h2 className="section-title">Sign up for free today</h2>
             <p className="section-description mt-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo in
-              voluptate repellat assumenda eos id nisi, sequi quaerat numquam ex
-              commodi est laudantium veritatis iusto distinctio voluptatum.
-              Quibusdam, totam reiciendis.
+            Gear up for a successful final year project with tools that
+              simplify your journey. From research to task management, we've got
+              you covered. Embark on this mission and make your project a
+              stellar success.
             </p>
           </RevealOnScroll>
           <motion.img
@@ -42,7 +42,7 @@ export const CallToAction = () => {
             }}
           />
           <motion.img
-            src={springImage.src}
+            src={planetImage.src}
             alt="spring image"
             width={360}
             className="absolute -right-[331px] -top-[19px]"
@@ -54,15 +54,15 @@ export const CallToAction = () => {
         <RevealOnScroll>
           <div className="flex gap-2 mt-10 justify-center">
             <SignedIn>
-              <button className="btn btn-primary">You're waitlisted!</button>
+              <button className="btn btn-primary">You're on the Crew!</button>
             </SignedIn>
             <SignedOut>
               <SignInButton mode="modal">
-                <button className="btn btn-primary">Get waitlisted</button>
+                <button className="btn btn-primary">Join the Crew</button>
               </SignInButton>
             </SignedOut>
             <button className="btn btn-text gap-1">
-              <span>Learn more</span>
+              <span>Explore Features</span>
               <ArrowRight className="h-5 w-5" />
             </button>
           </div>
