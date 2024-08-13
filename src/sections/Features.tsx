@@ -7,7 +7,6 @@ import telescopeImage from "@/assets/telescope.png";
 import rocketImage from "@/assets/rocket.png";
 import RevealOnScroll from "@/components/RevealOnScroll";
 
-
 export const Features = () => {
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -21,7 +20,13 @@ export const Features = () => {
   }, [scrollYProgress]);
 
   return (
-    <section ref={sectionRef} className="bg-black py-24 overflow-x-clip border-b border-gray-500">
+    <section
+      ref={sectionRef}
+      className="bg-black py-24 overflow-x-clip relative"
+      style={{
+        borderBottom: "1px solid transparent",
+      }}
+    >
       <div className="container mx-auto px-4">
         <div className="section-heading text-center">
           <RevealOnScroll>
@@ -100,7 +105,25 @@ export const Features = () => {
         </RevealOnScroll>
       </div>
 
-      
+      {/* Gradient Separator for Bottom Border */}
+      <style jsx>{`
+        section::after {
+          content: "";
+          display: block;
+          height: 2px;
+          width: 100%;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background-image: linear-gradient(
+            90deg,
+            rgba(202, 171, 255, 0) 1.46%,
+            rgba(202, 171, 255, 0.6) 40.83%,
+            rgba(202, 171, 255, 0.3) 65.57%,
+            rgba(202, 171, 255, 0) 107.92%
+          );
+        }
+      `}</style>
     </section>
   );
 };

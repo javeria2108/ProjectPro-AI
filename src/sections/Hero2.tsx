@@ -70,7 +70,7 @@ export const Hero = () => {
               </div>
             </RevealOnScroll>
           </div>
-          <div className="mt-20 md:mt-0 md:h-[648px] md:flex-1 relative">
+          <div className="hidden md:block mt-20 md:mt-0 md:h-[648px] md:flex-1 relative">
             <div ref={planet1Ref} className="absolute top-10 right-[30%]">
               <Image
                 src={planetImage1.src}
@@ -79,7 +79,7 @@ export const Hero = () => {
                 alt="planet image"
               />
             </div>
-            <div ref={planet2Ref} className="absolute bottom-10 right-[20%]">
+            <div ref={planet2Ref} className="hidden md:block absolute bottom-10 right-[20%]">
               <Image
                 src={planetImage2.src}
                 width={200}

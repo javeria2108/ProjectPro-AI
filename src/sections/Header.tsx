@@ -23,7 +23,7 @@ export const Header = () => {
             <div className="flex items-center justify-between">
               <Image src={Logo} alt="FYP Logo" height={40} width={40} />
               <MenuIcon className="h-5 w-5 md:hidden" />
-              <nav className="hidden md:flex gap-6 text-black/60 items-center">
+              <nav className="hidden md:flex gap-6 text-white/60 items-center">
                 <a href="#">About</a>
                 <a href="#">Product</a>
                 <a href="#">Features</a>

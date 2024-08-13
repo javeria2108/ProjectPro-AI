@@ -42,7 +42,11 @@ export const ProductShowcase = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-black border-y border-gray-400 py-24 overflow-x-clip"
+      className="bg-black py-24 overflow-x-clip relative"
+      style={{
+        borderTop: "1px solid transparent",
+        borderBottom: "1px solid transparent",
+      }}
     >
       <div className="container">
         <div className="section-heading">
@@ -53,7 +57,12 @@ export const ProductShowcase = () => {
             <h2 className="section-title mt-5">
               Your Final Year Project Companion
             </h2>
-            <p className="section-description mt-5 ">Why spend hours sifting through countless articles when AI can do the heavy lifting for you? ProjectPro AI harnesses the power of AI to recommend the most relevant research, helping you stay ahead of the curve.</p>
+            <p className="section-description mt-5">
+              Why spend hours sifting through countless articles when AI can do
+              the heavy lifting for you? ProjectPro AI harnesses the power of AI
+              to recommend the most relevant research, helping you stay ahead of
+              the curve.
+            </p>
           </RevealOnScroll>
         </div>
         <div className="relative" style={{ perspective: 1000 }}>
@@ -64,7 +73,9 @@ export const ProductShowcase = () => {
               transformOrigin: "center",
               transition: "opacity 1s ease-in-out, transform 1s ease-in-out",
               opacity: inView ? 1 : 0.2,
-              transform: inView ? "rotateY(0) translateY(0)" : "rotateY(-45deg) translateY(100px)",
+              transform: inView
+                ? "rotateY(0) translateY(0)"
+                : "rotateY(-45deg) translateY(100px)",
             }}
           >
             <Image
@@ -73,9 +84,12 @@ export const ProductShowcase = () => {
               className="glass-effect"
               style={{ opacity: inView ? 1 : 0 }}
             />
-            <div className="glass-placeholder" style={{ display: inView ? "none" : "block" }} />
+            <div
+              className="glass-placeholder"
+              style={{ display: inView ? "none" : "block" }}
+            />
           </div>
-          {/* <motion.img
+          <motion.img
             src={pyramidImage.src}
             height={262}
             width={262}
@@ -84,7 +98,7 @@ export const ProductShowcase = () => {
             style={{
               translateY,
             }}
-          /> */}
+          />
           <motion.img
             src={tubeImage.src}
             alt="tube image"
@@ -96,9 +110,35 @@ export const ProductShowcase = () => {
             }}
           />
         </div>
-        
       </div>
 
+      {/* Gradient Separator */}
+      <style jsx>{`
+        section::before,
+        section::after {
+          content: "";
+          display: block;
+          height: 2px;
+          width: 100%;
+          position: absolute;
+          left: 0;
+          background-image: linear-gradient(
+            90deg,
+            rgba(202, 171, 255, 0) 1.46%,
+            rgba(202, 171, 255, 0.6) 40.83%,
+            rgba(202, 171, 255, 0.3) 65.57%,
+            rgba(202, 171, 255, 0) 107.92%
+          );
+        }
+
+        section::before {
+          top: 0;
+        }
+
+        section::after {
+          bottom: 0;
+        }
+      `}</style>
     </section>
   );
 };

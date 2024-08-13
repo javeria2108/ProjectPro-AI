@@ -2,7 +2,7 @@
 "use client";
 import ArrowRight from "@/assets/arrow-right.svg";
 import starImage from "@/assets/pln2.png";
-import planetImage from "@/assets/planet2.png";
+import planetImage from "@/assets/ff2.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import RevealOnScroll from "@/components/RevealOnScroll";
@@ -17,18 +17,15 @@ export const CallToAction = () => {
   const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
 
   return (
-    <section
-      ref={sectionRef}
-      className="bg-black py-24 overflow-x-clip"
-    >
+    <section ref={sectionRef} className="bg-black py-24 overflow-x-clip">
       <div className="container">
         <div className="section-heading relative">
           <RevealOnScroll>
             <h2 className="section-title">Sign up for free today</h2>
             <p className="section-description mt-5">
-            Gear up for a successful final year project with tools that
-              simplify your journey. From research to task management, we have got
-              you covered. Embark on this mission and make your project a
+              Gear up for a successful final year project with tools that
+              simplify your journey. From research to task management, we have
+              got you covered. Embark on this mission and make your project a
               stellar success.
             </p>
           </RevealOnScroll>
@@ -48,13 +45,16 @@ export const CallToAction = () => {
             className="absolute -right-[331px] -top-[19px]"
             style={{
               translateY,
+              rotate: "20deg", // Rotate by 30 degrees
             }}
           />
         </div>
         <RevealOnScroll>
           <div className="flex gap-2 mt-10 justify-center">
             <SignedIn>
-              <button className="btn btn-primary">You&apos;re on the Crew!</button>
+              <button className="btn btn-primary">
+                You&apos;re on the Crew!
+              </button>
             </SignedIn>
             <SignedOut>
               <SignInButton mode="modal">
