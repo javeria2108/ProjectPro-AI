@@ -7,6 +7,7 @@ import RevealOnScroll from "@/components/RevealOnScroll";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import planetImage1 from "@/assets/planet3.png";
 import planetImage2 from "@/assets/planet4.png";
+import { Link } from "react-scroll"
 
 export const Hero = () => {
   const heroRef = useRef(null);
@@ -63,10 +64,15 @@ export const Hero = () => {
                     <button className="btn btn-primary">Join the crew</button>
                   </SignInButton>
                 </SignedOut>
-                <button className="btn btn-text gap-1">
-                  <span>Learn more</span>
-                  <ArrowIcon className="h-5 w-5" />
-                </button>
+                <Link 
+                to="features" 
+                smooth={true} 
+                duration={500} 
+                className="btn btn-text gap-1 cursor-pointer"
+              >
+                <span className="text-white">Learn more</span>
+                <ArrowIcon className='h-5 w-5 text-white' />
+              </Link>
               </div>
             </RevealOnScroll>
           </div>

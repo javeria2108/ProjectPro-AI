@@ -26,9 +26,9 @@ export const Header = () => {
               <Image src={Logo} alt="FYP Logo" height={40} width={40} />
               <MenuIcon className="h-5 w-5 md:hidden" />
               <nav className="hidden md:flex gap-6 text-white/60 items-center">
-                <a href="#">About</a>
-                <a href="#">Product</a>
-                <a href="#">Features</a>
+                <a href="#about">About</a>
+                <a href="#product">Product</a>
+                <a href="#features">Features</a>
                 {/* <button className="bg-black text-white px-4 py-2 rounded-lg font-medium inline-flex align-items justify-center tracking-tight">
                   Register now
                 </button> */}

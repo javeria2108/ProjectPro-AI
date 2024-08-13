@@ -41,6 +41,7 @@ export const ProductShowcase = () => {
 
   return (
     <section
+    id="product"
       ref={sectionRef}
       className="bg-gradient-to-b from-black to-[#220828] py-24 overflow-x-clip relative"
       style={{

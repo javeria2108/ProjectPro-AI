@@ -41,7 +41,7 @@ export const Typewriter = () => {
   }, [text, isDeleting, index, speed]);
 
   return (
-    <div className="flex items-center justify-center min-h-96 bg-black py-12 pt-20">
+    <div id="about" className="flex items-center justify-center min-h-96 bg-black py-12 pt-20">
       <p className="text-white text-center text-3xl lg:text-5xl font-medium px-4 lg:px-14 w-3/4">
         {text}
         <span className="animate-blink">|</span>

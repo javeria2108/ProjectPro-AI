@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { Toaster } from 'sonner';
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function RootLayout({
       <GoogleAnalytics />
         <body className={clsx(dmSans.className, "antialiased bg-[#EAEEFE]")}>
           {children}
+          <Toaster position="bottom-center" />
         </body>
       </html>
     </ClerkProvider>

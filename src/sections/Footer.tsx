@@ -1,3 +1,4 @@
+'use client'
 import logo from "@/assets/logosaas.png";
 import Image from "next/image";
 import SocialX from "@/assets/social-x.svg";
@@ -5,8 +6,19 @@ import SocialInsta from "@/assets/social-insta.svg";
 import SocialLinkedin from "@/assets/social-linkedin.svg";
 import SocialPin from "@/assets/social-pin.svg";
 import SocialYoutube from "@/assets/social-youtube.svg";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import { toast } from 'sonner';
 
 export const Footer = () => {
+  const handleClick = () => {
+    toast("Coming soon", {
+      style: {
+        backgroundColor: "#000",
+        color: "#fff",
+      },
+      duration: 3000,
+    });
+  };
   return (
     <footer className="bg-[#220828] text-[#BCBCBC] text-sm py-10 text-center">
       <div className="container">
@@ -14,17 +26,29 @@ export const Footer = () => {
           <Image src={logo} height={40} alt="saas logo" className="relative" />
         </div>
         <nav className="flex flex-col md:flex-row md:justify-center gap-6 mt-6">
-          <a href="#">About</a>
-          <a href="#">Product</a>
-          <a href="#">Features</a>
-          <a href="#">Register now</a>
+          <a href="#about">About</a>
+          <a href="#product">Product</a>
+          <a href="#features">Features</a>
+       
+          <SignedIn>
+                 
+                  <a href="/">You&apos;re on the crew</a>
+       
+                </SignedIn>
+                <SignedOut>
+                  <SignInButton mode="modal">
+                  
+                    <a href="/">Join the crew</a>
+       
+                  </SignInButton>
+                </SignedOut>
         </nav>
         <div className="flex justify-center gap-6 mt-6">
-          <SocialX />
-          <SocialInsta />
-          <SocialLinkedin />
-          <SocialPin />
-          <SocialYoutube />
+        <SocialX onClick={handleClick} />
+          <SocialInsta onClick={handleClick} />
+          <SocialLinkedin onClick={handleClick} />
+          <SocialPin onClick={handleClick} />
+          <SocialYoutube onClick={handleClick} />
         </div>
         <p className="mt-6">&copy; 2024 Mkhan, JZ. All rights reserved.</p>
       </div>

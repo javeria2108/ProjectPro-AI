@@ -21,6 +21,7 @@ export const Features = () => {
 
   return (
     <section
+    id="features"
       ref={sectionRef}
       className="bg-gradient-to-b from-[#220828] to-black py-24 overflow-x-clip relative"
       style={{
