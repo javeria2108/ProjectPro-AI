@@ -90,7 +90,7 @@ export const ProductShowcase = () => {
               style={{ display: inView ? "none" : "block" }}
             />
           </div>
-          <motion.img
+          {/* <motion.img
             src={pyramidImage.src}
             height={262}
             width={262}
@@ -99,7 +99,7 @@ export const ProductShowcase = () => {
             style={{
               translateY,
             }}
-          />
+          /> */}
           <motion.img
             src={tubeImage.src}
             alt="tube image"
