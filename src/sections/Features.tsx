@@ -22,8 +22,9 @@ export const Features = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-black py-24 overflow-x-clip relative"
+      className="bg-gradient-to-b from-[#220828] to-black py-24 overflow-x-clip relative"
       style={{
+        borderTop: "1px solid transparent",
         borderBottom: "1px solid transparent",
       }}
     >
@@ -37,7 +38,7 @@ export const Features = () => {
               Streamlined for easy management
             </h2>
             <p className="section-description mt-5 text-white">
-            Seamlessly organize, track, and complete your final year project
+              Seamlessly organize, track, and complete your final year project
               with ease. Set goals, collaborate, and reach new heights in your
               academic journey.
             </p>
@@ -54,7 +55,7 @@ export const Features = () => {
               />
               <h3 className="text-xl font-bold mb-2">Mission Control</h3>
               <p className="text-sm tracking-tight text-white">
-              Centralize your resources and tools for a streamlined workflow.
+                Centralize your resources and tools for a streamlined workflow.
               </p>
             </div>
             <div className="relative max-w-xs w-full bg-transparent text-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#252525] text-center">
@@ -64,11 +65,10 @@ export const Features = () => {
                 className="mx-auto mb-4 w-48 h-48 object-cover rounded-xl"
                 style={{ scale }}
               />
-              <h3 className="text-xl font-bold mb-2">
-              Milestone Tracker
-              </h3>
+              <h3 className="text-xl font-bold mb-2">Milestone Tracker</h3>
               <p className="text-sm tracking-tight text-white">
-              Break down your project into manageable tasks and achieve them step by step.
+                Break down your project into manageable tasks and achieve them
+                step by step.
               </p>
             </div>
           </div>
@@ -83,8 +83,8 @@ export const Features = () => {
                 style={{ scale }}
               />
               <h3 className="text-xl font-bold mb-2">Research Navigator</h3>
-              <p className="text-sm tracking-tight text-white"> 
-              Discover and organize your research sources with precision
+              <p className="text-sm tracking-tight text-white">
+                Discover and organize your research sources with precision
               </p>
             </div>
             <div className="relative max-w-xs w-full bg-transparent text-white p-6 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#252525] text-center">
@@ -94,11 +94,9 @@ export const Features = () => {
                 className="mx-auto mb-4 w-48 h-48 object-cover rounded-xl"
                 style={{ scale }}
               />
-              <h3 className="text-xl font-bold mb-2">
-              Launch Pad
-              </h3>
+              <h3 className="text-xl font-bold mb-2">Launch Pad</h3>
               <p className="text-sm tracking-tight text-white">
-              Kickstart your project with the right resources and tools.
+                Kickstart your project with the right resources and tools.
               </p>
             </div>
           </div>
@@ -107,6 +105,7 @@ export const Features = () => {
 
       {/* Gradient Separator for Bottom Border */}
       <style jsx>{`
+        section::before,
         section::after {
           content: "";
           display: block;
@@ -114,7 +113,6 @@ export const Features = () => {
           width: 100%;
           position: absolute;
           left: 0;
-          bottom: 0;
           background-image: linear-gradient(
             90deg,
             rgba(202, 171, 255, 0) 1.46%,
@@ -122,6 +120,14 @@ export const Features = () => {
             rgba(202, 171, 255, 0.3) 65.57%,
             rgba(202, 171, 255, 0) 107.92%
           );
+        }
+
+        section::before {
+          top: 0;
+        }
+
+        section::after {
+          bottom: 0;
         }
       `}</style>
     </section>
