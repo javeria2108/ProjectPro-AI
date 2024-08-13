@@ -1,13 +1,13 @@
-"use client";
-import ArrowIcon from "@/assets/arrow-right.svg";
-import Image from "next/image";
+'use client'
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
-import RevealOnScroll from "@/components/RevealOnScroll";
-import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import Image from "next/image";
 import planetImage1 from "@/assets/planet3.png";
 import planetImage2 from "@/assets/planet4.png";
-import { Link } from "react-scroll"
+import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import ArrowIcon from "@/assets/arrow-right.svg";
+import { Link } from "react-scroll";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 export const Hero = () => {
   const heroRef = useRef(null);
@@ -18,26 +18,25 @@ export const Hero = () => {
     const planet1 = planet1Ref.current;
     const planet2 = planet2Ref.current;
 
-    // Function to create random floating animation
-    const floatAnimation = (element: any, xRange: number, yRange: number) => {
+    const floatAnimation = (element: gsap.TweenTarget, xRange: number, yRange: number) => {
       gsap.to(element, {
         x: `+=${gsap.utils.random(-xRange, xRange)}`,
         y: `+=${gsap.utils.random(-yRange, yRange)}`,
         duration: gsap.utils.random(2, 4),
         ease: "power1.inOut",
-        onComplete: () => floatAnimation(element, xRange, yRange), // Repeat animation
+        onComplete: () => floatAnimation(element, xRange, yRange),
       });
     };
 
-    // Apply floating animation to both planets
-    floatAnimation(planet1, 50, 30);
-    floatAnimation(planet2, 60, 40);
+    // Apply floating animation with a smaller range
+    floatAnimation(planet1, 20, 15); // Smaller range to prevent overflow
+    floatAnimation(planet2, 25, 20);
   }, []);
 
   return (
     <section
       ref={heroRef}
-      className="pt-8 pb-20 md:pt-5 md:pb-10 bg-transparent overflow-x-clip"
+      className="relative pt-8 pb-20 md:pt-5 md:pb-10 bg-transparent overflow-hidden"
     >
       <div className="container">
         <div className="md:flex items-center">
@@ -64,15 +63,15 @@ export const Hero = () => {
                     <button className="btn btn-primary">Join the crew</button>
                   </SignInButton>
                 </SignedOut>
-                <Link 
-                to="features" 
-                smooth={true} 
-                duration={500} 
-                className="btn btn-text gap-1 cursor-pointer"
-              >
-                <span className="text-white">Learn more</span>
-                <ArrowIcon className='h-5 w-5 text-white' />
-              </Link>
+                <Link
+                  to="features"
+                  smooth={true}
+                  duration={500}
+                  className="btn btn-text gap-1 cursor-pointer"
+                >
+                  <span className="text-white">Learn more</span>
+                  <ArrowIcon className="h-5 w-5 text-white" />
+                </Link>
               </div>
             </RevealOnScroll>
           </div>
@@ -85,7 +84,10 @@ export const Hero = () => {
                 alt="planet image"
               />
             </div>
-            <div ref={planet2Ref} className="hidden md:block absolute bottom-10 right-[20%]">
+            <div
+              ref={planet2Ref}
+              className="hidden md:block absolute bottom-10 right-[20%]"
+            >
               <Image
                 src={planetImage2.src}
                 width={200}

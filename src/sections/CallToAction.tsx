@@ -2,7 +2,7 @@
 "use client";
 import ArrowRight from "@/assets/arrow-right.svg";
 import starImage from "@/assets/pln2.png";
-import planetImage from "@/assets/ff2.png";
+import planetImage from "@/assets/astronaut2.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import RevealOnScroll from "@/components/RevealOnScroll";
@@ -41,7 +41,7 @@ export const CallToAction = () => {
           <motion.img
             src={planetImage.src}
             alt="spring image"
-            width={360}
+            width={320}
             className="absolute -right-[331px] -top-[19px]"
             style={{
               translateY,
@@ -62,7 +62,7 @@ export const CallToAction = () => {
               </SignInButton>
             </SignedOut>
             <button className="btn btn-text gap-1">
-              <span>Explore Features</span>
+              <a href="#features">Explore Features</a>
               <ArrowRight className="h-5 w-5" />
             </button>
           </div>
